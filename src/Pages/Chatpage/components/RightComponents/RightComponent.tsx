@@ -1,20 +1,41 @@
-import { Box, Container, Grid, IconButton, TextField } from '@mui/material'
-import React from 'react'
-import HeaderRight from './HeaderRight'
-import { Send } from '@mui/icons-material'
+import {
+  Box,
+  Container,
+  Grid,
+  IconButton,
+  Paper,
+  TextField,
+  Typography,
+} from "@mui/material";
+import React from "react";
+import HeaderRight from "./HeaderRight";
+import { Send, WhatsApp } from "@mui/icons-material";
+import ChatLayout from "../ChatLayout/ChatLayout";
+import { useSelector } from "react-redux";
+import TypingAnimation from "../../../../components/TypingAnimation";
+import HeroBanner from "./HeroBanner";
 
 const RightComponent = () => {
+  const screen = useSelector((state): any=>state.screen)
   return (
-   <>
-   <HeaderRight/>
-<Grid container sx={{position :'fixed', bottom : 0 , display :'flex'}}>
-
-   <TextField
-   sx={{ bgcolor :'#fff'}} 
-   /> <IconButton sx={{bgcolor: 'white'}}><Send></Send></IconButton>
-   </Grid>
-   </>
-  )
+    <div style={{ display: "flex", flexDirection: "column", height: "100%" }}>
+{
+  screen.type === 'DEFAULT' ? (<>
+<HeroBanner/>
+  
+  </>) : (<>
+    <HeaderRight />
+     <ChatLayout/>
+  </>)
 }
 
-export default RightComponent
+    
+
+
+
+
+    </div>
+  );
+};
+
+export default RightComponent;

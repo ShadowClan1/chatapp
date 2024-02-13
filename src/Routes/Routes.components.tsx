@@ -7,6 +7,7 @@ import Login from "../Pages/Login/Login";
 import Signup from "../Pages/Signup/Signup";
 import LandingPage from "../Pages/Landingpage/LandingPage";
 import ChatPage from "../Pages/Chatpage/ChatPage";
+import StickyFooter from "../Pages/Stickyfooter/StickyFooter";
 // import AppLoader from "../Pages/AppLoader/AppLoader.page";
 // import Conversation from "../Pages/Conversation/Conversation.page";
 
@@ -39,6 +40,8 @@ const RoutesComponent = () => {
         />} />
        <Route path="/chat-page" element={<ChatPage
         />} />
+
+        <Route path="/sticky-footer" element={<StickyFooter/>} />
          { /*<Route path="/signup" element={<Signup />} />
         <Route path="/sync" element={<AppLoader />} />
     <Route path="/conversations" element={<Conversation />} /> */}
